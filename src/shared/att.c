@@ -1653,7 +1653,6 @@ int bt_att_resend(struct bt_att *att, unsigned int id, uint8_t opcode,
 
 	switch (opcode) {
 	/* Only prepend requests that could be a continuation */
-	case BT_ATT_OP_READ_BLOB_REQ:
 	case BT_ATT_OP_PREP_WRITE_REQ:
 	case BT_ATT_OP_EXEC_WRITE_REQ:
 		result = queue_push_head(att->req_queue, op);
